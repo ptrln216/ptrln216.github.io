@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>JS中的正則表達式 RegExp類型</title>
+      <link href="2020/10/14/JS%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F-RegExp%E9%A1%9E%E5%9E%8B/"/>
+      <url>2020/10/14/JS%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F-RegExp%E9%A1%9E%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很長一段時間只覺得「正則表達式」這個名字很高大上，但卻不知道是什麽意思，自己也稀里糊塗地一直沒去瞭解。</p><p>直到最近做項目的時候，發現正則表達式的功能很强大，可以從字符串中找到自己需要的部分，但直接看項目代碼看不太懂，主要是不理解寫正則表達式的思路，這才終於著手學習。</p><h2 id="什麽是正則表達式"><a href="#什麽是正則表達式" class="headerlink" title="什麽是正則表達式"></a>什麽是正則表達式</h2><p>正則表達式（Regular Expression）描述的是字符串匹配的模式，有以下多種用途：</p><ul><li>檢查一個字符串是否含有某種子串（返回<code>true</code>或<code>false</code>）</li><li>把匹配到的字符串替換掉</li><li>從某個字符串中取出符合條件的子串（搜索符合自己需求的子串）</li></ul><p>就我自己的理解，正則表達式就是自己描寫一個規則，用於精細地控制（規範）字符串，使之符合我們的需要。</p><h2 id="JS中正則表達式的使用"><a href="#JS中正則表達式的使用" class="headerlink" title="JS中正則表達式的使用"></a>JS中正則表達式的使用</h2><p>ECMAScript通過<code>RegExp</code>類型來支持正則表達式。</p><h3 id="創建方式"><a href="#創建方式" class="headerlink" title="創建方式"></a>創建方式</h3><p>正則表達式的創建方式有兩種：</p><ul><li>字面量形式</li><li>使用<code>RegExp</code>構造函數（創建實例）</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字面量形式</span></span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/pattern/</span>flags</span><br><span class="line"><span class="comment">// RegExp構造函數</span></span><br><span class="line"><span class="keyword">let</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(pattern, flags);</span><br><span class="line"></span><br><span class="line">pattern: 模式，即我們制定的字符串規則，可以包含字符類、限定符、分組等</span><br><span class="line">flags: 標志（修飾符）</span><br><span class="line">標志主要包括:</span><br><span class="line"><span class="number">1.</span> g 全局匹配（<span class="built_in">global</span>），模式應用於所有字符串，而非在發現第一個匹配項時就停止</span><br><span class="line"><span class="number">2.</span> i 忽略大小寫（<span class="keyword">case</span>-insensitive）</span><br><span class="line"><span class="number">3.</span> m 多行匹配（multiline），到達一行文本末尾時還會繼續查找下一行中是否存在匹配的項</span><br></pre></td></tr></table></figure><p>例子：匹配”bat”或”cat”，不區分大小寫</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 兩者完全相同，只是創建方式不同。</span></span><br><span class="line"><span class="keyword">let</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="keyword">let</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;[bc]at&quot;</span>, <span class="string">&quot;i&quot;</span>);</span><br></pre></td></tr></table></figure><blockquote><p>注意，傳給<code>RegExp</code>構造函數的參數都是字符串（不能直接傳字面量），所以在某些情況下要對字符雙重轉義。即在字符串中對轉義字符”\“進行轉義。這是兩種創建方式的主要區別。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> reg1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;\d&#x27;</span>);  <span class="comment">///d/</span></span><br><span class="line"><span class="keyword">let</span> reg2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;\\d&#x27;</span>); <span class="comment">///\d/</span></span><br><span class="line"><span class="keyword">let</span> reg3 = <span class="regexp">/\d/</span>;  <span class="comment">//    /\d/</span></span><br></pre></td></tr></table></figure></blockquote><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>代表特殊含義的元字符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\d : <span class="number">0</span><span class="number">-9</span>之間的任意一個數字，\d只占一個字符位置  <span class="comment">// digits</span></span><br><span class="line">\w : 數字、字母、下劃綫 <span class="number">0</span><span class="number">-9</span> a-z A-Z _<span class="comment">// words</span></span><br><span class="line">\s : 空白或空格   <span class="comment">// space</span></span><br><span class="line">\D : 除了\d</span><br><span class="line">\W : 除了\w</span><br><span class="line">\S : 除了\s</span><br><span class="line">.  : 除了\n之外的任意字符</span><br><span class="line">\  : 轉義字符</span><br><span class="line">|  : 或者</span><br><span class="line">() : 分組，為模式劃分不同部分</span><br><span class="line">\n : 匹配換行符</span><br><span class="line">\b : 匹配邊界，包括字符串的開頭和結尾、空格的兩邊 =&gt; 不占用字符串位數</span><br><span class="line">^  : 標識開始位置 =&gt; 本身不占字符位置</span><br><span class="line">$  : 標識結束位置 =&gt; 本身不占字符位置</span><br><span class="line">[a-z] : 任意a-z之間的字母</span><br><span class="line">[^a-z] : 任意非a-z的字符，[]中^表示除了</span><br><span class="line">[abc] : abc三個字母中的任何一個</span><br></pre></td></tr></table></figure><p>代表匹配次數的量詞元字符</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* : <span class="number">0</span>到多個</span><br><span class="line">+ : <span class="number">1</span>到多個</span><br><span class="line">? : <span class="number">0</span>或<span class="number">1</span>次，即可有可無</span><br><span class="line">&#123;n&#125; : 正好n次</span><br><span class="line">&#123;n,&#125; : n到多次</span><br><span class="line">&#123;n,m&#125; : n到m次</span><br></pre></td></tr></table></figure><h3 id="正則的特性"><a href="#正則的特性" class="headerlink" title="正則的特性"></a>正則的特性</h3><ul><li>貪婪性</li></ul><blockquote><p>貪婪性是指，正則在捕獲時，每次或盡可能多的去捕獲符合條件的内容。</p><p>如果我們想盡可能少的捕捉符合條件的字符串的話，可以在量詞元字符後面加上?。</p></blockquote><ul><li>懶惰性</li></ul><blockquote><p>懶惰性是指正則在成功捕獲一次後，不管後面還有沒有符合條件的，就不再捕捉了。</p><p>如果想捕獲目標中所有符合的，可以用標志g來標明是全局捕獲。</p></blockquote><h2 id="思維導圖"><a href="#思維導圖" class="headerlink" title="思維導圖"></a>思維導圖</h2><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@029cb927187f92b23963f2a5c4b25ebba9f054ea/2020/10/15/6f6a8806e8379b07c2508a42166e24cd.png"></p><h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a href="https://segmentfault.com/a/1190000009324194">JS正则表达式入门，看这篇就够了</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS基礎 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>項目 迷你鋼琴</title>
+      <link href="2020/10/13/%E9%A0%85%E7%9B%AE-%E8%BF%B7%E4%BD%A0%E9%8B%BC%E7%90%B4/"/>
+      <url>2020/10/13/%E9%A0%85%E7%9B%AE-%E8%BF%B7%E4%BD%A0%E9%8B%BC%E7%90%B4/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>user-select: none;</p><p>transition-duration: .3s;</p><h2 id="遇到的問題"><a href="#遇到的問題" class="headerlink" title="遇到的問題"></a>遇到的問題</h2><p><a href="https://blog.csdn.net/yijiupingfan0914/article/details/80985881">getElementsByClassName()不能添加事件监听</a></p><p>querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 項目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS項目 HTML/CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS中的call, apply, bind方法</title>
       <link href="2020/10/12/JS%E4%B8%AD%E7%9A%84call-apply-bind%E6%96%B9%E6%B3%95/"/>
       <url>2020/10/12/JS%E4%B8%AD%E7%9A%84call-apply-bind%E6%96%B9%E6%B3%95/</url>
