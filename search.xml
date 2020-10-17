@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>CSS技巧 使用display:table和display:table-cell實現單行、多行文本垂直居中</title>
+      <link href="2020/10/18/CSS%E6%8A%80%E5%B7%A7-%E4%BD%BF%E7%94%A8display-table%E5%92%8Cdisplay-table-cell%E5%AF%A6%E7%8F%BE%E5%96%AE%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+      <url>2020/10/18/CSS%E6%8A%80%E5%B7%A7-%E4%BD%BF%E7%94%A8display-table%E5%92%8Cdisplay-table-cell%E5%AF%A6%E7%8F%BE%E5%96%AE%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS屬性之box-shadow</title>
       <link href="2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-shadow/"/>
       <url>2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-shadow/</url>
@@ -33,7 +46,7 @@
       <link href="2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bvertical-align/"/>
       <url>2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bvertical-align/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="vertical-align屬性"><a href="#vertical-align屬性" class="headerlink" title="vertical-align屬性"></a><code>vertical-align</code>屬性</h2><p>學習前端的人，多少都用過<code>text-align</code>屬性，該屬性可以用來設置文本的橫向位置。因此很多人第一次碰到<code>vertical-align</code>時，會自然地認爲這個屬性是用來控制文本的垂直位置，但實際上這種理解是錯誤的。</p><p>其實，<code>vertical-align</code>是用來設置<strong>行内元素</strong>的縱向對齊方式的，該屬性定義行内元素的基線，相對於該元素所在行的基線的垂直對齊。</p><h3 id="vertical-align屬性的可選項："><a href="#vertical-align屬性的可選項：" class="headerlink" title="vertical-align屬性的可選項："></a><code>vertical-align</code>屬性的可選項：</h3><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>baseline</td><td>默認。元素放在父元素的基線上。</td></tr><tr><td>sub</td><td>對齊文本的下標</td></tr><tr><td>super</td><td>對齊文本的上標</td></tr><tr><td>top</td><td>把元素頂端與行中最高元素的頂端對齊</td></tr><tr><td>text-top</td><td>把元素頂端與父元素字體的頂端對齊</td></tr><tr><td>middle</td><td>把此元素放在父元素中部</td></tr><tr><td>bottom</td><td>把元素頂端與行中最低元素的頂端對齊</td></tr><tr><td>text-bottom</td><td>把元素底端與父元素字體的底端對齊</td></tr><tr><td>length</td><td>正值表示向上移動，負值表示向下</td></tr><tr><td>%</td><td>使用”line-height”屬性的百分比值，來控制元素的移動</td></tr><tr><td>inherit</td><td>從父元素繼承vertical-align屬性的值</td></tr></tbody></table><p>光看表格内的描述還是有些抽象的，下面的兩張圖有助於幫助理解。</p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@6b85601a025f87c354c3d50cff04faac49563cd4/2020/10/17/cf8ade9c0df5bd26c4ec2218c6f7d615.png"></p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@e7b822b521d88514f5978c323f9c8f3d6acdedff/2020/10/17/4ab52b95109ed32cb32711b10a42399a.png"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="vertical-align屬性"><a href="#vertical-align屬性" class="headerlink" title="vertical-align屬性"></a><code>vertical-align</code>屬性</h2><p>學習前端的人，多少都用過<code>text-align</code>屬性，該屬性可以用來設置文本的橫向位置。因此很多人第一次碰到<code>vertical-align</code>時，會自然地認爲這個屬性是用來控制文本的垂直位置，但實際上這種理解是錯誤的。</p><p>其實，<code>vertical-align</code>是用來設置<strong>行内元素</strong>的縱向對齊方式的，該屬性定義行内元素的基線，相對於該元素所在行的基線的垂直對齊。</p><h3 id="vertical-align屬性的可選項："><a href="#vertical-align屬性的可選項：" class="headerlink" title="vertical-align屬性的可選項："></a><code>vertical-align</code>屬性的可選項：</h3><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>baseline</td><td>默認。元素放在父元素的基線上。</td></tr><tr><td>sub</td><td>對齊文本的下標</td></tr><tr><td>super</td><td>對齊文本的上標</td></tr><tr><td>top</td><td>把元素頂端與行中最高元素的頂端對齊</td></tr><tr><td>text-top</td><td>把元素頂端與父元素字體的頂端對齊</td></tr><tr><td>middle</td><td>把此元素放在父元素中部</td></tr><tr><td>bottom</td><td>把元素頂端與行中最低元素的頂端對齊</td></tr><tr><td>text-bottom</td><td>把元素底端與父元素字體的底端對齊</td></tr><tr><td>length</td><td>正值表示向上移動，負值表示向下</td></tr><tr><td>%</td><td>使用”line-height”屬性的百分比值，來控制元素的移動</td></tr><tr><td>inherit</td><td>從父元素繼承vertical-align屬性的值</td></tr></tbody></table><p>光看表格内的描述還是有些抽象的，下面的兩張圖有助於幫助理解。</p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@6b85601a025f87c354c3d50cff04faac49563cd4/2020/10/17/cf8ade9c0df5bd26c4ec2218c6f7d615.png"></p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@e7b822b521d88514f5978c323f9c8f3d6acdedff/2020/10/17/4ab52b95109ed32cb32711b10a42399a.png"></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>使用<code>vertical-align</code>屬性，還能夠實現單行、甚至多行的文本垂直居中。</p>]]></content>
       
       
       <categories>
