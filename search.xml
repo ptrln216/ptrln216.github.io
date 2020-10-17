@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>CSS屬性之box-shadow</title>
+      <link href="2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-shadow/"/>
+      <url>2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-shadow/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="box-shadow屬性"><a href="#box-shadow屬性" class="headerlink" title="box-shadow屬性"></a><code>box-shadow</code>屬性</h2><h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">h-shadow</span> <span class="selector-tag">v-shadow</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">color</span> <span class="selector-tag">inset</span>;</span><br></pre></td></tr></table></figure><blockquote><p>注：可以添加多個陰影，每個陰影用逗號隔開即可</p></blockquote><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>h-shadow</td><td>必需。水平陰影位置。允許負值。</td></tr><tr><td>v-shadow</td><td>必需。垂直陰影位置。允許負值。</td></tr><tr><td>blur</td><td>可選。模糊距離。</td></tr><tr><td>spread</td><td>可選。陰影尺寸。</td></tr><tr><td>color</td><td>可選。陰影顔色。</td></tr><tr><td>inset</td><td>可選。將外部陰影（outset）改爲内部陰影。</td></tr></tbody></table><h3 id="取值説明"><a href="#取值説明" class="headerlink" title="取值説明"></a>取值説明</h3><ul><li><code>h-shadow</code>和<code>v-shadow</code>：設置陰影的水平/垂直偏移，如果是正值則陰影在元素右邊和下邊。如果都為<code>0</code>，那麽陰影在元素正後方，這時如果設置了<code>blur</code>或<code>spread</code>則有模糊效果。</li><li><code>blur</code>：值越大，模糊面積越大，陰影就越大越淡。不能爲負數。默認爲<code>0</code>，此時陰影邊緣鋒利。</li><li><code>spread</code>：取正值時，陰影擴大；負值時，陰影縮小。默認為<code>0</code>，此時陰影與元素同樣大。</li></ul><p>可以看下面這張圖，更直觀一點，有助於理解。</p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@05486e999dd1d97c4de28b9b2adb03d283a2b79a/2020/10/18/7e0564e25a4963bc3e3a6ca5a879809b.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML/CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS屬性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS屬性之vertical-align</title>
+      <link href="2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bvertical-align/"/>
+      <url>2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bvertical-align/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="vertical-align屬性"><a href="#vertical-align屬性" class="headerlink" title="vertical-align屬性"></a><code>vertical-align</code>屬性</h2><p>學習前端的人，多少都用過<code>text-align</code>屬性，該屬性可以用來設置文本的橫向位置。因此很多人第一次碰到<code>vertical-align</code>時，會自然地認爲這個屬性是用來控制文本的垂直位置，但實際上這種理解是錯誤的。</p><p>其實，<code>vertical-align</code>是用來設置<strong>行内元素</strong>的縱向對齊方式的，該屬性定義行内元素的基線，相對於該元素所在行的基線的垂直對齊。</p><h3 id="vertical-align屬性的可選項："><a href="#vertical-align屬性的可選項：" class="headerlink" title="vertical-align屬性的可選項："></a><code>vertical-align</code>屬性的可選項：</h3><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>baseline</td><td>默認。元素放在父元素的基線上。</td></tr><tr><td>sub</td><td>對齊文本的下標</td></tr><tr><td>super</td><td>對齊文本的上標</td></tr><tr><td>top</td><td>把元素頂端與行中最高元素的頂端對齊</td></tr><tr><td>text-top</td><td>把元素頂端與父元素字體的頂端對齊</td></tr><tr><td>middle</td><td>把此元素放在父元素中部</td></tr><tr><td>bottom</td><td>把元素頂端與行中最低元素的頂端對齊</td></tr><tr><td>text-bottom</td><td>把元素底端與父元素字體的底端對齊</td></tr><tr><td>length</td><td>正值表示向上移動，負值表示向下</td></tr><tr><td>%</td><td>使用”line-height”屬性的百分比值，來控制元素的移動</td></tr><tr><td>inherit</td><td>從父元素繼承vertical-align屬性的值</td></tr></tbody></table><p>光看表格内的描述還是有些抽象的，下面的兩張圖有助於幫助理解。</p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@6b85601a025f87c354c3d50cff04faac49563cd4/2020/10/17/cf8ade9c0df5bd26c4ec2218c6f7d615.png"></p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@e7b822b521d88514f5978c323f9c8f3d6acdedff/2020/10/17/4ab52b95109ed32cb32711b10a42399a.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML/CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS屬性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS屬性之box-sizing</title>
+      <link href="2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-sizing/"/>
+      <url>2020/10/17/CSS%E5%B1%AC%E6%80%A7%E4%B9%8Bbox-sizing/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="box-sizing屬性"><a href="#box-sizing屬性" class="headerlink" title="box-sizing屬性"></a><code>box-sizing</code>屬性</h2><h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: content-box|border-box|inherit;</span><br></pre></td></tr></table></figure><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>content-box</td><td>寬和高分別應用到元素的内容框上。<br />在寬度和高度之外繪製元素的内邊距和邊框。<br />默認值</td></tr><tr><td>border-box</td><td>為元素指定的任何内邊距和邊框，都將在已設定好的寬度和高度内進行繪製。<br />通過從已設定的寬度和高度減去内邊距和邊框才能得到内容的寬和高。</td></tr><tr><td>inherit</td><td>從父元素繼承box-sizing屬性的值</td></tr></tbody></table><p>看圖示更清楚</p><p><img src="https://cdn.jsdelivr.net/gh/ptrln216/HexoStaticFile@fef6c8f9557c6f1eeb2562d0936379b7aa045497/2020/10/17/267cb47e04cc0fecb3997e93cc68bd08.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML/CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS屬性 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS中的正則表達式 RegExp類型</title>
       <link href="2020/10/14/JS%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F-RegExp%E9%A1%9E%E5%9E%8B/"/>
       <url>2020/10/14/JS%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F-RegExp%E9%A1%9E%E5%9E%8B/</url>
