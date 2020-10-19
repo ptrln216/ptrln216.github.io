@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CSS函數之linear-gradient</title>
+      <link href="2020/10/18/CSS%E5%87%BD%E6%95%B8%E4%B9%8Blinear-gradient/"/>
+      <url>2020/10/18/CSS%E5%87%BD%E6%95%B8%E4%B9%8Blinear-gradient/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="CSS-linear-gradient-函數"><a href="#CSS-linear-gradient-函數" class="headerlink" title="CSS linear-gradient()函數"></a>CSS <code>linear-gradient()</code>函數</h2><p>目前的幾種現代瀏覽器内核，主要有Mozilla（Firefox等）、WebKit（Safari、Chrome等）、Opera（Opera瀏覽器）、Trident（IE瀏覽器）。本文主要看的是<code>linear-gradient()</code>函數在Mozilla、WebKit、Opera下的應用。</p><h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">direction</span>, <span class="selector-tag">color-stop1</span>, <span class="selector-tag">color-stop2</span>, ...);</span><br></pre></td></tr></table></figure><p>具體應用如下</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Mozilla */</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-moz-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">red</span>, <span class="selector-tag">blue</span>);</span><br><span class="line"><span class="comment">/* Webkit */</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-webkit-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">red</span>, <span class="selector-tag">blue</span>);</span><br><span class="line"><span class="comment">/*Opera 11.10+ */</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">-o-linear-gradient</span>(<span class="selector-tag">left</span>, <span class="selector-tag">red</span>, <span class="selector-tag">blue</span>);</span><br></pre></td></tr></table></figure><h3 id="具體説明"><a href="#具體説明" class="headerlink" title="具體説明"></a>具體説明</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML/CSS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS函數 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS技巧 使用display:table和display:table-cell實現單行、多行文本垂直居中</title>
       <link href="2020/10/18/CSS%E6%8A%80%E5%B7%A7-%E4%BD%BF%E7%94%A8display-table%E5%92%8Cdisplay-table-cell%E5%AF%A6%E7%8F%BE%E5%96%AE%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
       <url>2020/10/18/CSS%E6%8A%80%E5%B7%A7-%E4%BD%BF%E7%94%A8display-table%E5%92%8Cdisplay-table-cell%E5%AF%A6%E7%8F%BE%E5%96%AE%E8%A1%8C%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</url>
