@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>React專案 Amazon-Clone</title>
+      <link href="2020/11/19/React%E5%B0%88%E6%A1%88-Amazon-Clone/"/>
+      <url>2020/11/19/React%E5%B0%88%E6%A1%88-Amazon-Clone/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><h2 id="使用說明"><a href="#使用說明" class="headerlink" title="使用說明"></a>使用說明</h2><h3 id="運行前端"><a href="#運行前端" class="headerlink" title="運行前端"></a>運行前端</h3><p>在根目錄 amazon-clone 下<code>npm run start</code></p><h3 id="運行後端"><a href="#運行後端" class="headerlink" title="運行後端"></a>運行後端</h3><p>到 functions 目錄下<code>firebase emulators:start</code></p><h2 id="實現的功能"><a href="#實現的功能" class="headerlink" title="實現的功能"></a>實現的功能</h2><h3 id="首頁"><a href="#首頁" class="headerlink" title="首頁"></a>首頁</h3><ul><li><input checked="" disabled="" type="checkbox"> 首頁</li><li><input disabled="" type="checkbox"> 頂部輪播圖</li></ul><h3 id="登錄註冊"><a href="#登錄註冊" class="headerlink" title="登錄註冊"></a>登錄註冊</h3><ul><li><p><input checked="" disabled="" type="checkbox">  登錄頁面</p></li><li><p><input checked="" disabled="" type="checkbox">  登入登出</p></li><li><p><input checked="" disabled="" type="checkbox">  郵箱密碼註冊</p></li></ul><h3 id="購物車"><a href="#購物車" class="headerlink" title="購物車"></a>購物車</h3><ul><li><input checked="" disabled="" type="checkbox"> 購物車頁面</li><li><input checked="" disabled="" type="checkbox"> 添加商品到購物車</li><li><input checked="" disabled="" type="checkbox"> 從購物車移除商品</li></ul><h3 id="結算"><a href="#結算" class="headerlink" title="結算"></a>結算</h3><ul><li><input checked="" disabled="" type="checkbox"> 結算頁面</li><li><input checked="" disabled="" type="checkbox"> 用銀行卡支付</li><li><input checked="" disabled="" type="checkbox"> 訂單頁面</li></ul><h3 id="導航"><a href="#導航" class="headerlink" title="導航"></a>導航</h3><ul><li><input disabled="" type="checkbox"> 導航守衛，沒有登入不能通過鏈接訪問部分頁面</li></ul><h3 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h3><ul><li><input checked="" disabled="" type="checkbox"> 商品鼠標懸浮放大特效</li><li><input disabled="" type="checkbox"> 移除商品時的滑動過渡特效</li></ul><h2 id="項目截圖"><a href="#項目截圖" class="headerlink" title="項目截圖"></a>項目截圖</h2><h2 id="遇到的問題"><a href="#遇到的問題" class="headerlink" title="遇到的問題"></a>遇到的問題</h2><h3 id="Firebase-Login驗證失敗"><a href="#Firebase-Login驗證失敗" class="headerlink" title="Firebase Login驗證失敗"></a>Firebase Login驗證失敗</h3><p>解決方法參考這篇文章 <a href="https://github.com/firebase/firebase-tools/issues/155">Unable to deploy behind a proxy #155</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React專案 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS基礎之作用域（lexical scope）</title>
       <link href="2020/10/25/JS%E5%9F%BA%E7%A4%8E%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88lexical-scope%EF%BC%89/"/>
       <url>2020/10/25/JS%E5%9F%BA%E7%A4%8E%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88lexical-scope%EF%BC%89/</url>
